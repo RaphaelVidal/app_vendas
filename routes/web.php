@@ -20,3 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/usuarios', 'usuariosController@index')->name('usuarios.index');
+Route::post('/gravarnovousuario', 'usuariosController@gravarUsuario')->name('usuarios.gravarnovousuario');

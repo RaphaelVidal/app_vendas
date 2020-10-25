@@ -21,6 +21,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('painel-component', require('./components/PainelComponente.vue').default);
+Vue.component('dataTable-component', require('./components/DatatableComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

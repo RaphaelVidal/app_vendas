@@ -19,6 +19,8 @@
     <!-- Styles -->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/datatables/dataTables.bootstrap4.css')}}">
+
 </head>
 
 <body id="page-top">
@@ -39,7 +41,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="{{route('home')}}">
                         <i class="fas fa-home"></i>
                         <span>Home</span></a>
                 </li>
@@ -60,8 +62,29 @@
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="buttons.html">Perfis de acesso</a>
-                            <a class="collapse-item" href="cards.html">Gerenciar Usuários</a>
+                            <!-- <a class="collapse-item" href="buttons.html">Perfis de acesso</a> -->
+                            <a class="collapse-item" href="{{route('usuarios.index')}}">Gerenciar Usuários</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Produtos
+                </div>
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#itensMenu" aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Itens</span>
+                    </a>
+                    <div id="itensMenu" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <!-- <a class="collapse-item" href="buttons.html">Perfis de acesso</a> -->
+                            <a class="collapse-item" href="{{route('usuarios.index')}}">Gerenciar Itens</a>
                         </div>
                     </div>
                 </li>
@@ -141,7 +164,6 @@
                     </nav>
                     <!-- End of Topbar -->
 
-
                     @yield('content')
 
 
@@ -194,7 +216,7 @@
         </div>
     </div> <!-- fim container vue -->
     <!-- Bootstrap core JavaScript-->
-     <script src="{{ asset('js\app.js') }}"></script>
+    <script src="{{ asset('js\app.js') }}"></script>
     <!-- <script src="{{ asset('assets\jquery\jquery.min.js') }}"></script>
     <script src="{{ asset('assets\bootstrap\js\bootstrap.bundle.min.js')}}"></script> -->
 
@@ -202,9 +224,27 @@
     <!-- <script src="{{ asset('assets\jquery-easing\jquery.easing.min.js')}}"></script> -->
 
     <!-- Custom scripts for all pages-->
-   
+
     <script src="{{ asset('js\sb-admin-2.min.js') }}"></script>
-    
+    <script type="text/javascript" charset="utf8" src="{{asset('assets/datatables/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" charset="utf8" src="{{asset('assets/datatables/dataTables.bootstrap4.js')}}"></script>
+  
+    <script src="{{ asset('js\funcoes_usuarios.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 
 </html>
+
+<?php if (session('msgConfirmaAcao.snExibir')) { ?>
+    <script>
+      Swal.fire({
+        position: 'center',
+        icon: '<?= session('msgConfirmaAcao.tipo') ?>',
+        title: '<?= session('msgConfirmaAcao.titulo') ?>',
+        text: '<?= session('msgConfirmaAcao.texto') ?>',
+        showConfirmButton: false,
+        timer: 2600
+      })
+    </script>
+<?php } ?>
