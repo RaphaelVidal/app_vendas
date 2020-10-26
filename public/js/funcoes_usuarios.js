@@ -135,3 +135,7 @@ function buscarItens() {
         }//fecha error
     })//fim ajax
 }
+
+function calculaTotal() {
+    alert('chamou')
+}

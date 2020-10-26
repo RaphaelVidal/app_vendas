@@ -27,5 +27,8 @@ Route::post('/gravaritem', 'ItensController@gravarItem')->name('itens.gravaritem
 Route::get('/estoque', 'EstoqueController@index')->name('estoque.index');
 Route::get('/buscaItens', 'ItensController@buscaItens')->name('itens.buscaItens');
 Route::post('/gravarEstoque', 'EstoqueController@gravarEstoque')->name('estoque.gravarEstoque');
+Route::get('/vendas', 'VendaController@index')->name('vendas.index');
+Route::get('/compra', 'VendaController@compra')->name('compra.index');
+
 
 

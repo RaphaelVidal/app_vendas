@@ -94,6 +94,35 @@
                         </div>
                     </div>
                 </li>
+                
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#itensvendas" aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Vendas</span>
+                    </a>
+                    <div id="itensvendas" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <!-- <a class="collapse-item" href="buttons.html">Perfis de acesso</a> -->
+                            <a class="collapse-item" href="{{route('vendas.index')}}">Gerenciar Vendas</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#compra" aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Produtos</span>
+                    </a>
+                    <div id="compra" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <!-- <a class="collapse-item" href="buttons.html">Perfis de acesso</a> -->
+                            <a class="collapse-item" href="{{route('compra.index')}}">Nova compra</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <!-- End of Sidebar -->
 
