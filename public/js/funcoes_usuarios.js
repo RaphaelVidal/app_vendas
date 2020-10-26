@@ -137,5 +137,6 @@ function buscarItens() {
 }
 
 function calculaTotal() {
-    alert('chamou')
+   var iditem = $('#idItem').val()
+   var qtditem = $('#idItem').val()
 }
