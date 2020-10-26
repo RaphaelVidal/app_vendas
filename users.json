@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "5f958261c159000044002754"
+  },
+  "name": "Raphael Vidal",
+  "email": "raphael_r.vidal@hotmail.com",
+  "perfil": "1",
+  "password": "$2y$10$OkyAPvOFFBoH.lWq4/MgUOsI5JjmEa52YI84WNx.WgtCWERKkzQVa",
+  "updated_at": {
+    "$date": "2020-10-25T13:49:21.902Z"
+  },
+  "created_at": {
+    "$date": "2020-10-25T13:49:21.902Z"
+  }
+},{
+  "_id": {
+    "$oid": "5f9602649151000052002787"
+  },
+  "name": "Emanuella Vidal",
+  "email": "teste@hotmail.com",
+  "password": "$2y$10$rDqIy6mf.5WhPvfv0xM1ke/.Y15k/CgI0TRRHj2V8TTTlBx2qOX2K",
+  "perfil": "3",
+  "updated_at": {
+    "$date": "2020-10-25T22:55:32.939Z"
+  },
+  "created_at": {
+    "$date": "2020-10-25T22:55:32.939Z"
+  }
+},{
+  "_id": {
+    "$oid": "5f9602999151000052002788"
+  },
+  "name": "Kits personalizados",
+  "email": "emanuella.bsantos@gmail.com.br",
+  "password": "$2y$10$tYPcB/72F8rcEbWTNTt5aeSNLdeEA089RbuILNekp5YpGdE1yocKe",
+  "perfil": "3",
+  "updated_at": {
+    "$date": "2020-10-25T22:56:25.236Z"
+  },
+  "created_at": {
+    "$date": "2020-10-25T22:56:25.236Z"
+  }
+},{
+  "_id": {
+    "$oid": "5f963793915100005200278e"
+  },
+  "name": "Admin",
+  "email": "admin@gmail.com",
+  "password": "$2y$10$l8d1ablmPVD0q9McnhyN5eapK6vmWSl/qyX2iadN88fFVQBEKUdUe",
+  "perfil": "1",
+  "updated_at": {
+    "$date": "2020-10-26T02:42:27.451Z"
+  },
+  "created_at": {
+    "$date": "2020-10-26T02:42:27.451Z"
+  }
+}]
