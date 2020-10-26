@@ -61,6 +61,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Perfil de Acesso') }}</label>
+
+                            <div class="col-md-6">
+                                
+                                <select name="perfil" class="form-control" required> 
+                                    <option value="">Selecione...</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Logística</option>
+                                    <option value="3">Cliente</option>
+
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
