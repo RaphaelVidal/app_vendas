@@ -17,7 +17,7 @@
             <button type="" class="btn btn-primary" data-toggle="modal" data-target="#novoUsuario">Novo Usuário</button>
         </div>
 
-        <table id="tabelaUsuarios" class="table_datatable w-100">
+        <table id="tabelaUsuarios" class="table table-hover table_datatable w-100">
             <thead>
                 <tr>
                     <th>Nome</th>

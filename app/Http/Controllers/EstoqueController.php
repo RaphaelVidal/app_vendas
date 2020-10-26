@@ -3,26 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Estoque;
 use App\Itens;
 
-
-class ItensController extends Controller
+class EstoqueController extends Controller
 {
     function index()
     {
-        $itens = Itens::all();
+        $estoques = Estoque::all();
         // dd($usuarios[0]->_id);
-        return view('itens')->with('itens', $itens);
+        return view('estoque')->with('estoques', $estoques);
     }
-    function gravarItem(Request $request)
+    function gravarEstoque(Request $request)
     {
         $inputs = $request->all();
+        $item = Itens::find($inputs['idItem']);
         try {
-            $novoItem = new Itens;
-            $novoItem->nome = $inputs['nome'];
-            $novoItem->descricao = $inputs['descricao'];
-            $novoItem->valor = $inputs['valor'];
-            $novoItem->save();
+            $novoEstoque = new Estoque;
+            $novoEstoque->idItem = $inputs['idItem'];
+            $novoEstoque->nomeItem = $item['nome'];
+            $novoEstoque->unidadeMedida = $inputs['unidadeMedida'];
+            $novoEstoque->quantidade = $inputs['quantidade'];
+            $novoEstoque->save();
 
             session()->flash(
                 'msgConfirmaAcao',
@@ -33,7 +35,7 @@ class ItensController extends Controller
                     "texto" => "Ação realizada com sucesso"
                 ]
             );
-             return redirect()->route('itens.index');
+             return redirect()->route('estoque.index');
         
         } catch (\Throwable $th) {
             // throw $th;
@@ -46,13 +48,8 @@ class ItensController extends Controller
                     "texto" => "Ação não realizada."
                 ]
             );
-            return redirect()->route('itens.index');
+            return redirect()->route('estoque.index');
         }
 
-    }
-    function buscaItens()
-    {
-        $itens = Itens::all();
-        return json_encode($itens);
     }
 }

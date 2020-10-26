@@ -20,7 +20,12 @@
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/datatables/dataTables.bootstrap4.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}">
+    
+    <script>
+        var host = window.location.host;
+        var url = "http://" + host;
+    </script>
 </head>
 
 <body id="page-top">
@@ -84,7 +89,8 @@
                     <div id="itensMenu" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <!-- <a class="collapse-item" href="buttons.html">Perfis de acesso</a> -->
-                            <a class="collapse-item" href="{{route('usuarios.index')}}">Gerenciar Itens</a>
+                            <a class="collapse-item" href="{{route('itens.index')}}">Gerenciar Itens</a>
+                            <a class="collapse-item" href="{{route('estoque.index')}}">Gerenciar Estoque</a>
                         </div>
                     </div>
                 </li>
@@ -147,7 +153,7 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-user fa-1x mr-3"></i> <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                                    <i class="fa fa-user fa-1x mr-3"></i> <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{ Auth::user()->name }} </span>
 
                                 </a>
                                 <!-- Dropdown - User Information -->
@@ -228,23 +234,26 @@
     <script src="{{ asset('js\sb-admin-2.min.js') }}"></script>
     <script type="text/javascript" charset="utf8" src="{{asset('assets/datatables/jquery.dataTables.min.js')}}"></script>
     <script type="text/javascript" charset="utf8" src="{{asset('assets/datatables/dataTables.bootstrap4.js')}}"></script>
-  
+    
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
     <script src="{{ asset('js\funcoes_usuarios.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+    <!-- <script type="text/javascript" charset="utf8" src="{{asset('assets/chosen/chosen.jquery.js')}}"></script> -->
+    
+    
 </body>
 
 </html>
 
 <?php if (session('msgConfirmaAcao.snExibir')) { ?>
     <script>
-      Swal.fire({
-        position: 'center',
-        icon: '<?= session('msgConfirmaAcao.tipo') ?>',
-        title: '<?= session('msgConfirmaAcao.titulo') ?>',
-        text: '<?= session('msgConfirmaAcao.texto') ?>',
-        showConfirmButton: false,
-        timer: 2600
-      })
+        Swal.fire({
+            position: 'center',
+            icon: '<?= session('msgConfirmaAcao.tipo') ?>',
+            title: '<?= session('msgConfirmaAcao.titulo') ?>',
+            text: '<?= session('msgConfirmaAcao.texto') ?>',
+            showConfirmButton: false,
+            timer: 2600
+        })
     </script>
 <?php } ?>

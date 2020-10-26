@@ -22,3 +22,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/usuarios', 'usuariosController@index')->name('usuarios.index');
 Route::post('/gravarnovousuario', 'usuariosController@gravarUsuario')->name('usuarios.gravarnovousuario');
+Route::get('/itens', 'ItensController@index')->name('itens.index');
+Route::post('/gravaritem', 'ItensController@gravarItem')->name('itens.gravaritem');
+Route::get('/estoque', 'EstoqueController@index')->name('estoque.index');
+Route::get('/buscaItens', 'ItensController@buscaItens')->name('itens.buscaItens');
+Route::post('/gravarEstoque', 'EstoqueController@gravarEstoque')->name('estoque.gravarEstoque');
+
+
